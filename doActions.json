@@ -27,7 +27,7 @@
         {
             "actionType": "message",
             "platform": "wechat",
-            "content": "{input.Content}",
+            "content": "${input.Content}",
             "to": [
                 "user1",
                 "user2"
@@ -40,8 +40,8 @@
         },
         {
             "actionType": "message",
-            "platform": "wechat",
-            "content": "{input.Content}",
+            "platform": "dingtalk",
+            "content": "${input.Content}",
             "to": [
                 "user1",
                 "user2"
