@@ -1,5 +1,5 @@
 {
-    "generator_id": "action_0001",
+    "generator_id": "action_0003",
     "type": "action",
     "description": "通过Processor 得到处理的信息用企业微信发送消息", # optional
     "version": "0.0.1", # optional
