@@ -1,0 +1,46 @@
+{
+    "generator_id": "action_0005",
+    "type": "action",
+    "description": "通过Processor 得到处理的信息用邮件发送", # optional
+    "version": "0.0.1", # optional
+    "input": [
+        {
+            "name": "Content",
+            "description": "消息内容"
+        },
+        {
+            "name": "Receiver",
+            "description": "接收者"
+        }
+    ],
+    "output": [
+        {
+            "status": "success", # success or fail
+            "type": "string"
+        },
+    ],
+    "template": [
+        {
+            "action_type": "message", #Mandatory
+            "sender": "user1", # 发送者id, Mandatory
+            "content": "${input.Content}", # Mandatory
+            "receiver_address": "${input.Receiver}", # Mandatory
+            "sender_address": "sender", # Optional
+            "cc_address": "cc", # Optional
+            "message_type": "text", # Optional
+            "subject": "subject", # Optional
+            "attachments": "attachments", # Optional
+            "priority": "priority", # Optional
+            "sensitivity": "sensitivity", # Optional
+            "importance": "importance", # Optional
+            "on_wait": true, # 监听
+            "require_response": true, # 是否需要回复
+            "response_timeout": 60, # 回复超时时间
+            "conversationType": "", #消息的时间戳，单位毫秒。
+            "createAt": "", #消息创建时间戳，单位毫秒。
+        },
+    ],
+    "assert": {
+        "finish_reason": "stop", # optional
+    }
+}

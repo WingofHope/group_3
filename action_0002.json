@@ -1,0 +1,58 @@
+{
+    "generator_id": "action_0002",
+    "type": "action",
+    "description": "通过Processor 得到处理的信息用微信h5发送消息", # optional
+    "version": "0.0.1", # optional
+    "input": [
+        {
+            "name": "Content",
+            "description": "消息内容"
+        }
+    ],
+    "output": [
+        {
+            "status": "success", # success or fail
+            "type": "string"
+        },
+    ],
+    "template": [
+        {
+            "action_type": "message", #Mandatory
+            "sender": "user1", # 发送者id, Mandatory
+            "platform": "WeChat", # Mandatory
+            "content": "${input.Content}",
+            "restrictions": [
+                "able_to_send_to_group": false,
+                "able_to_send_to_user": true,
+            ],
+            "to": {
+                "user": {
+                    [
+                        "user_id": "user1",
+                        "user_name": "user1",
+                        "description": "发送给用户1"
+                    ],
+                },
+            },
+            "openid": "", # 微信用户唯一标识
+            "appid": "", # 应用唯一标识
+            "response_type": "code", # Mandatory
+            "redirect_uri": "", # 微信网页授权回调地址
+            "scope": "snsapi_login", # manatory
+            "recall": bool, # 是否撤回
+            "access_token_has_expired": bool, # access_token是否过期
+            "response_timeout": 60, # 回复超时时间
+            "sentence_length": 500, # 消息长度
+            "message_type": "text", # 消息类型
+            "message_id": "000001", # 消息id
+            "message_description": "消息1", # 消息描述
+            "message_summary": "简述",
+            "recall": bool, # 是否撤回
+            "conversationType": "", #消息的时间戳，单位毫秒。
+            "createAt": "", #消息创建时间戳，单位毫秒。
+        },
+    ],
+    "assert": {
+        "finish_reason": "stop", # optional
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "generator_id": "action_0004",
+    "type": "action",
+    "description": "通过Processor 得到处理的信息用钉钉发送消息", # optional
+    "version": "0.0.1", # optional
+    "input": [
+        {
+            "name": "Content", # mandatory
+            "description": "消息内容"# mandatory
+        }
+    ],
+    "output": [
+        {
+            "status": "success", # success or fail # mandatory
+            "type": "string" # mandatory
+        },
+    ],
+    "template": [
+        {
+            "action_type": "message", # mandatory
+            "sender": "user1", # 发送者id, mandatory
+            "platform": "DingDing",# mandatory
+            "content": "${input.Content}",# mandatory
+            "to": {
+                "group": {
+                    [
+                        "group_id": "group1",
+                        "group_name": "group1",
+                        "group_description": "群组1",
+                        "description": "发送给群组1"
+                    ],
+                },
+                "user": {
+                    [
+                        "user_id": "user1",
+                        "user_name": "user1",
+                        "description": "发送给用户1"
+                    ],
+                    [
+                        "user_id": "user2",
+                        "user_name": "user2",
+                        "description": "发送给用户2"
+                    ]
+                },
+            },
+            "mention": {
+                "group_members": [
+                    "user4",
+                    "user5"
+                ], #可空
+                "description": "at用户"
+            },
+            "at_all": false, # 是否@所有人
+            "on_wait": true, # 监听
+            "require_response": true, # 是否需要回复
+            "response_timeout": 60, # 回复超时时间
+            "group_id": "group1", # 群组id
+            "sentence_length": 500, # 消息长度
+            "message_type": "text", # 消息类型
+            "message_id": "000001", # 消息id
+            "message_description": "消息1", # 消息描述
+            "message_summary": "简述",
+            "msgtype": "text", # 消息类型
+            "sessionWebhook": "",
+            "isInAtList": "",
+            "conversationTitle": "",
+            "conversationType": "", #消息的时间戳，单位毫秒。
+            "createAt": "", #消息创建时间戳，单位毫秒。
+            "isAdmin": "", #是否是管理员
+        },
+    ],
+    "assert": {
+        "finish_reason": "stop", # optional
+    }
+}
