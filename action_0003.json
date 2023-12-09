@@ -26,18 +26,18 @@
                 "able_to_send_to_user": true,
             ],
             "to": {
-                "user": {
-                    [
+                "user": [
+                    {
                         "user_id": "user1",
                         "user_name": "user1",
                         "description": "发送给用户1"
-                    ],
-                    [
+                    },
+                    {
                         "user_id": "user2",
                         "user_name": "user2",
                         "description": "发送给用户2"
-                    ]
-                },
+                    }
+                ],
             },
             "mention": {
                 "group_members": [

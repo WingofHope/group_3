@@ -26,13 +26,13 @@
                 "able_to_send_to_user": true,
             ],
             "to": {
-                "user": {
-                    [
+                "user": [
+                    {
                         "user_id": "user1",
                         "user_name": "user1",
                         "description": "发送给用户1"
-                    ],
-                },
+                    },
+                ],
             },
             "openid": "", # 微信用户唯一标识
             "appid": "", # 应用唯一标识
